@@ -1,0 +1,49 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.top {
+    padding-bottom: 0px;
+}
+
+.nav {
+    padding-top: 11px;
+    padding-bottom: 12px;
+}
+
+.nav_logo {
+    padding: 0;   
+}
+
+.nav_link {
+    padding-top: 11px;
+    padding-bottom: 12px;
+}
+
+.top_content {
+    margin-top: 84px;
+    margin-bottom: 162px;
+}
+
+.top_img {
+    margin-top: 162px;
+    padding-top: 97px;
+    padding-bottom: 96px;
+}
+
+.top_title {
+    margin-top: 84px;
+}
+
+.top_text {
+    margin-top: 17px;
+}
+
+.top_button {
+    margin-top: 37px;
+}
+
+.top_logo {
+    margin-top: 82px;
+}
