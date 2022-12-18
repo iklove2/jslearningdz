@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="doge.png" type="image/x-icon">
+    <title>Dogs</title>
+    <style>
+        .title_page {
+            text-align: center;
+            box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.75);
+        }
+
+        .dogs_box {
+            display: flex;
+            justify-content: center;
+            gap: 32px;
+            flex-wrap: wrap;
+        }
+
+        .dog__box {
+            background-color: rgb(10, 75, 75);
+            width: 300px;
+            border: 5px outset blueviolet;
+            padding: 18px;
+            color: bisque;
+            box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.75);
+        }
+
+        .image_block {
+            min-height: 450px;
+            border: 5px outset blueviolet;
+            box-shadow: 0px 0px 25px rgba(180, 163, 163, 0.75);
+        }
+
+        .image {
+            width: 100%;
+        }
+
+        .title {
+            font-size: 24px;
+            font-weight: bold;
+            text-align: center;
+        }
+
+        .text {
+            font-size: 20px;
+            font-weight: normal;
+            text-align: center;
+        }
+
+        a {
+            text-decoration: none;
+            color: bisque
+        }
+
+        a:visited {
+            color: beige;
+        }
+
+        a:hover {
+            color: darkcyan;
+            background-color: bisque;
+        }
+    </style>
+</head>
+
+<body>
+    <h1 class="title_page">Такие разные и такие классные собаки!</h1>
+    <div class="dogs_box">
+
+    </div>
+    <h4 class="footer">© 2022 Влад Мержевич, по всем вопросам пишите по адресу vlad@htmlbook.ru</h4>
+    <script src="data.js"></script>
+    <script>
+        const data = JSON.parse(dataJson);
+        console.log(data);
+        const contentEl = document.querySelector('.dogs_box');
+
+        data.forEach(dataElem => {
+
+            const divEl = document.createElement('div');
+            divEl.classList.add('dog__box');
+
+            const titleEl = document.createElement('h2');
+            titleEl.classList.add('title');
+
+            const hrefEl = document.createElement('a');
+            hrefEl.href = dataElem.img_url;
+            hrefEl.textContent = dataElem.name;
+
+            const imgBlockEl = document.createElement('div');
+            imgBlockEl.classList.add('image_block');
+
+            const imgEl = document.createElement('img');
+            imgEl.classList.add('image');
+            imgEl.src = dataElem.img_url;
+            imgEl.alt = 'Порода ' + dataElem.name;
+
+            const textEl = document.createElement('p');
+            textEl.classList.add('text');
+            textEl.textContent = dataElem.desc;
+
+            contentEl.appendChild(divEl);
+            divEl.appendChild(titleEl);
+            titleEl.appendChild(hrefEl);
+            divEl.appendChild(imgBlockEl);
+            imgBlockEl.appendChild(imgEl);
+            divEl.appendChild(textEl);
+        });
+
+    </script>
+</body>
+
+</html>
