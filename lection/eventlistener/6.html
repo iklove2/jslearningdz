@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laudantium, consectetur assumenda vero quidem, reprehenderit, eos distinctio dolorem illo veritatis soluta inventore accusantium quod at quas eius dolores minus cum quam.</p> -->
+    <input type="text">
+<script>
+    // document.addEventListener('copy', function (e) {
+    //     const copyText = document.getSelection().toString();
+    //     console.log(copyText);
+    // });
+
+    // window.addEventListener('resize',   (event) => {
+    //     console.log('dfsdfsd');
+    // });
+    const inputEl = document.querySelector('input');
+    inputEl.addEventListener('input', (event) => {
+        if (Number(event.target.value) === 123) {
+            console.log('correct');
+        } else {
+            console.log('not correct');
+        }
+    });
+</script>
+</body>
+</html>

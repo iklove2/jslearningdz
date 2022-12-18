@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    const myDrinks = document.querySelectorAll('.drinks');
+
+    myForm2.addEventListener('submit', (e) => {
+    for (let i = 0; i < myDrinks.length; i++) {
+    if (myDrinks[i].checked) {
+    e.preventDefault();
+    console.log(`${myDrinks[i].nextElementSibling.textContent} ended `);
+    }
+    }
+    });
+
+
+
+</body>
+</html>
