@@ -21,18 +21,15 @@
     <script>
         const data = JSON.parse(dataJson);
         const divElContent = document.querySelector('.shop_content');
-        
+
         const h2El = document.createElement('h2');
-        h2El.classList.add('items_title');
         h2El.textContent = 'Featured Items';
-        
+
         const h4El = document.createElement('h4');
-        h4El.classList.add('items_subtitle');
         h4El.textContent = 'Shop for items based on what we featured in this week';
 
         const itemsEl = document.createElement('ul');
-        itemsEl.classList.add('items_products')
-  
+
         divElContent.appendChild(h2El);
         divElContent.appendChild(h4El);
         divElContent.appendChild(itemsEl);
@@ -47,6 +44,7 @@
             aImgEl.href = "#";
 
             const imgEl = document.createElement('img');
+            imgEl.classList.add('item_img');
             imgEl.src = dataElem.img;
             imgEl.alt = dataElem.title;
 
@@ -56,11 +54,9 @@
             aTitleEl.textContent = dataElem.title;
 
             const pEl = document.createElement('p');
-            pEl.classList.add('item_text_content');
             pEl.textContent = dataElem.text;
 
             const spanEl = document.createElement('span');
-            spanEl.classList.add('item_text_price');
             spanEl.textContent = "$" + dataElem.price;
 
             const buttonEl = document.createElement('button');
