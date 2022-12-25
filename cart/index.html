@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <script src="data.js"></script>
+    <section class="cart">
+        <h2>Cart Items</h2>
+
+    </section>
+    <script>
+        const data = JSON.parse(dataProducts);
+        console.log(data);
+        const mainEl = document.querySelector('.cart');
+        //const contentEl = document.querySelector('.cart_item');
+
+        data.forEach(dataElem => {
+
+            const divElCartItem = document.createElement('div');
+            divElCartItem.classList.add('cart_item');
+
+            const divEl = document.createElement('div');
+            divEl.classList.add('img_wrapper');
+
+            const imgEl = document.createElement('img');
+            imgEl.src = dataElem.img_url;
+            imgEl.alt = dataElem.item_name;
+
+            const descriptionEl = document.createElement('div');
+            descriptionEl.classList.add('description');
+
+            const titleEl = document.createElement('h6');
+            titleEl.textContent = dataElem.item_name;
+
+            const ulEl = document.createElement('ul');
+
+            const liElPrice = document.createElement('li');
+
+            const liElColor = document.createElement('li');
+
+            const liElSize = document.createElement('li');
+
+            const liElQuantity = document.createElement('li');
+
+            const spanPriceEl = document.createElement('span');
+            spanPriceEl.textContent = "price:";
+
+            const spanPriceElColor = document.createElement('span');
+            spanPriceElColor.classList.add('price_value');
+            spanPriceElColor.textContent = dataElem.price + "$";
+
+            const spanElColor = document.createElement('span');
+            spanElColor.textContent = "color";
+
+            const spanElColorName = document.createElement('span');
+            spanElColorName.textContent = dataElem.color;
+
+            const spanElSize = document.createElement('span');
+            spanElSize.textContent = "size";
+
+            const spanElSizerName = document.createElement('span');
+            spanElSizerName.textContent = dataElem.size;
+
+            const spanElQuantity = document.createElement('span');
+            spanElQuantity.textContent = "quantity";
+
+            const spanElQuantityName = document.createElement('span');
+            spanElQuantityName.textContent = dataElem.quantity;
+
+
+            mainEl.appendChild(divElCartItem);
+
+            divElCartItem.appendChild(divEl);
+            divEl.appendChild(imgEl);
+
+            divElCartItem.appendChild(descriptionEl);
+            descriptionEl.appendChild(titleEl);
+            descriptionEl.appendChild(ulEl);
+
+            ulEl.appendChild(liElPrice);
+            liElPrice.appendChild(spanPriceEl);
+            liElPrice.appendChild(spanPriceElColor);
+
+            ulEl.appendChild(liElColor);
+            liElColor.appendChild(spanElColor);
+            liElColor.appendChild(spanElColorName);
+
+            ulEl.appendChild(liElSize);
+            liElSize.appendChild(spanElSize);
+            liElSize.appendChild(spanElSizerName);
+
+            ulEl.appendChild(liElQuantity);
+            liElQuantity.appendChild(spanElQuantity);
+            liElQuantity.appendChild(spanElQuantityName);
+
+        });
+    </script>
+</body>
+
+</html>
