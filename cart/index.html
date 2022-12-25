@@ -16,12 +16,12 @@
 
     </section>
     <script>
-        const data = JSON.parse(dataProducts);
-        console.log(data);
-        const mainEl = document.querySelector('.cart');
-        //const contentEl = document.querySelector('.cart_item');
+        const dataCart = JSON.parse(dataProducts);
 
-        data.forEach(dataElem => {
+        const mainEl = document.querySelector('.cart');
+
+
+        dataCart.forEach(dataElem => {
 
             const divElCartItem = document.createElement('div');
             divElCartItem.classList.add('cart_item');

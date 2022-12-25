@@ -19,7 +19,7 @@
         <div class="shop_content"></div>
     </main>
     <script>
-        const data = JSON.parse(dataJson);
+        const dataItems = JSON.parse(dataJson);
         const divElContent = document.querySelector('.shop_content');
 
         const h2El = document.createElement('h2');
@@ -34,7 +34,7 @@
         divElContent.appendChild(h4El);
         divElContent.appendChild(itemsEl);
 
-        data.forEach(dataElem => {
+        dataItems.forEach(dataElem => {
 
             const liEl = document.createElement('li');
             liEl.classList.add('item_product');
