@@ -1,0 +1,48 @@
+"use strict";
+
+    // 1. Найти по id, используя getElementById, элемент с id равным "super_link"
+    // и вывести этот элемент в консоль.
+    const link1 = document.getElementById("super_link");
+    console.log(link1);
+    // 2. Внутри всех элементов на странице, которые имеют класс "card-link", поменяйте текст внутри элемента на "ссылка".
+    const card = document.getElementsByClassName("card-link")[1];
+    const card1 = document.getElementsByClassName("card-link")[0];
+    card.textContent = "ссылка";
+    card1.textContent = "ссылка";
+    console.log(card);
+    // 3. Найти все элементы на странице с классом "card-link", которые лежат в элементе с классом "card-body"
+    // и вывести полученную коллекцию в консоль.
+    const cardBody = document.querySelector("#card-body"); Здесь ищите класс, а поиск ведете по id. решетку меняем на "." и сделайте, например, вложенный класс (".fist_class .second_class")
+    
+    // .querySelectorAll(".card-link");
+
+    //  document.querySelector("#card-body");
+    // .querySelectorAll(".card-link");
+
+    console.log(cardBody);
+    // 4. Найти первый попавшийся элемент на странице у которого есть атрибут data - number со значением 50 и вывести его в консоль.
+    const data = document.querySelectorAll('[name="50"]'); здесь подсказка в самом задании атрибут 'data-number' [data-number="50"]
+    console.log(data);
+    // 5. Выведите содержимое тега title в консоль.
+    здесь прямое обращение к тегу document.title
+    const title = document.querySelector("title");
+    console.log(title);
+    // 6. Получите элемент с классом "card-title"
+    // и выведите его родительский узел в консоль.
+    const cardTitle = document.getElementsByClassName("card-link");
+
+
+    console.log(cardTitle).parentNode[0];
+
+    здесь напрмиер так const contentCardTitle = document.querySelector('.card-title').parentNode;[data-number="50"]
+
+    // 7. Создайте тегp `, запишите внутри него текст "Привет" и добавьте созданный тег в начало элемента, который имеет класс "card".
+    const paragraphEl = document.createElement("p");
+    paragraphEl.textContent = "Привет";
+    const elCont = document.querySelector(".card");
+    elCont.appendChild(paragraphEl);
+
+    //   8. Удалите тег h6 на странице.
+    const heading6 = document.querySelector("card-subtitle mb-2 text-muted");
+    heading6.remove();
+    //
